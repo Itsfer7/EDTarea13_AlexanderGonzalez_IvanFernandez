@@ -11,3 +11,6 @@
 
 # Version 1.3
 # Aumentamos el número de los arrays para que admita un máximo de 6 jugadores.
+
+# Version 1.4
+# En el método "tirarDado" cambiamos la condición de "if (puntosDado % 2 != 0)" a "if (puntosDado % 2 == 0)". De esta manera el jugador es capaz de escapar de la carcel.
