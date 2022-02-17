@@ -16,21 +16,24 @@ public class GameLauncher {
         juego.agregar("Juan");
         juego.agregar("Antonio");
 
-        Random rand = new Random();
+        if (juego.esJugable()) {
+            Random rand = new Random();
 
-        do {
+            do {
 
-            juego.tirarDado(rand.nextInt(5) + 1);
+                juego.tirarDado(rand.nextInt(5) + 1);
 
-            if (rand.nextInt(9) == 7) {
-                noGanador = juego.respuestaIncorrecta();
-            } else {
-                noGanador = juego.fueRespuestaCorrecta();
-            }
+                if (rand.nextInt(9) == 7) {
+                    noGanador = juego.respuestaIncorrecta();
+                } else {
+                    noGanador = juego.fueRespuestaCorrecta();
+                }
 
 
 
-        } while (noGanador);
-
+            } while (noGanador);
+        } else {
+            System.out.println("Jugadores insuficientes. La partida se ha cancelado.");
+        }
     }
 }
