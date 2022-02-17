@@ -15,6 +15,9 @@ public class GameLauncher {
         juego.agregar("Maria");
         juego.agregar("Juan");
         juego.agregar("Antonio");
+        juego.agregar("Pedro");
+        juego.agregar("Pepe");
+        juego.agregar("Jose");
 
         if (juego.esJugable()) {
             Random rand = new Random();
@@ -32,8 +35,10 @@ public class GameLauncher {
 
 
             } while (noGanador);
-        } else {
-            System.out.println("Jugadores insuficientes. La partida se ha cancelado.");
+        } else if (juego.cuantosJugadores() < 2) {
+            System.out.println("Se han detectado muy pocosjugadores. La partida se ha cancelado.");
+        } else if (juego.cuantosJugadores() > 6) {
+            System.out.println("Se han detectado demasiados jugadores. La partida se ha cancelado.");
         }
     }
 }
