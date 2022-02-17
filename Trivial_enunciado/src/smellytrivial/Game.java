@@ -56,7 +56,7 @@ public class Game {
         System.out.println("Ha sacado un " + puntosDado);
 
         if (enCasillaCastigo[jugadorActual]) {
-            if (puntosDado % 2 != 0) {
+            if (puntosDado % 2 == 0) {
                 estaSaliendoDeLaCarcel = true;
 
                 System.out.println(jugadores.get(jugadorActual) + " sale de la casilla de castigo");
