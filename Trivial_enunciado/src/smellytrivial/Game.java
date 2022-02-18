@@ -15,7 +15,7 @@ public class Game {
     LinkedList preguntasMusica = new LinkedList();
 
     int jugadorActual = 0;
-    boolean estaSaliendoDeLaCarcel;
+    boolean estaSaliendoDeLaCarcel = false;
 
     public  Game(){
         for (int i = 0; i < 50; i++) {
@@ -56,8 +56,8 @@ public class Game {
         System.out.println("Ha sacado un " + puntosDado);
 
         if (enCasillaCastigo[jugadorActual]) {
-            if (puntosDado % 2 == 0) {
-                estaSaliendoDeLaCarcel = true;
+            if (puntosDado % 2 != 0) {
+                enCasillaCastigo[jugadorActual] = false;
 
                 System.out.println(jugadores.get(jugadorActual) + " sale de la casilla de castigo");
                 posiciones[jugadorActual] = posiciones[jugadorActual] + puntosDado;
@@ -68,7 +68,7 @@ public class Game {
                 hacerPregunta();
             } else {
                 System.out.println(jugadores.get(jugadorActual) + " no sale de la casilla de castigo");
-                estaSaliendoDeLaCarcel = false;
+                enCasillaCastigo[jugadorActual] = true;
             }
 
         } else {
