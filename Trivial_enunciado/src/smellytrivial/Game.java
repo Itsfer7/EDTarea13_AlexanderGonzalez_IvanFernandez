@@ -5,9 +5,9 @@ import java.util.LinkedList;
 
 public class Game {
     ArrayList jugadores = new ArrayList();
-    int[] posiciones = new int[7];
-    int[] monederos = new int[7];
-    boolean[] enCasillaCastigo = new boolean[7];
+    int[] posiciones = new int[6];
+    int[] monederos = new int[6];
+    boolean[] enCasillaCastigo = new boolean[6];
 
     LinkedList preguntasCultura = new LinkedList();
     LinkedList preguntasCiencias = new LinkedList();
@@ -38,9 +38,9 @@ public class Game {
 
 
         jugadores.add(playerName);
-        posiciones[cuantosJugadores()] = 0;
-        monederos[cuantosJugadores()] = 0;
-        enCasillaCastigo[cuantosJugadores()] = false;
+        posiciones[cuantosJugadores() - 1] = cuantosJugadores() - 1;
+        monederos[cuantosJugadores() - 1] = cuantosJugadores() - 1;
+        enCasillaCastigo[cuantosJugadores() - 1] = false;
 
         System.out.println(playerName + " se ha unido a la partida");
         System.out.println("Es el jugador número " + jugadores.size());
