@@ -15,7 +15,6 @@ public class Game {
     LinkedList preguntasMusica = new LinkedList();
 
     int jugadorActual = 0;
-    boolean estaSaliendoDeLaCarcel = false;
 
     public  Game(){
         for (int i = 0; i < 50; i++) {
@@ -36,10 +35,10 @@ public class Game {
 
     public boolean agregar(String playerName) {
 
-
+        
         jugadores.add(playerName);
-        posiciones[cuantosJugadores() - 1] = cuantosJugadores() - 1;
-        monederos[cuantosJugadores() - 1] = cuantosJugadores() - 1;
+        posiciones[cuantosJugadores() - 1] = 0;
+        monederos[cuantosJugadores() - 1] = 0;
         enCasillaCastigo[cuantosJugadores() - 1] = false;
 
         System.out.println(playerName + " se ha unido a la partida");
@@ -101,7 +100,6 @@ public class Game {
             System.out.println(preguntasMusica.removeFirst());
     }
 
-
     private String categoriaActual() {
         if (posiciones[jugadorActual] == 0) return "Cultura popular";
         if (posiciones[jugadorActual] == 4) return "Cultura popular";
@@ -116,30 +114,6 @@ public class Game {
     }
 
     public boolean fueRespuestaCorrecta() {
-        if (enCasillaCastigo[jugadorActual]){
-            if (estaSaliendoDeLaCarcel) {
-                System.out.println("Respuesta correcta!!!!");
-                monederos[jugadorActual]++;
-                System.out.println(jugadores.get(jugadorActual)
-                        + " ahora tiene "
-                        + monederos[jugadorActual]
-                        + " monedas doradas.");
-
-                boolean ganador = jugadorHaGanado();
-                jugadorActual++;
-                if (jugadorActual == jugadores.size()) jugadorActual = 0;
-
-                return ganador;
-            } else {
-                jugadorActual++;
-                if (jugadorActual == jugadores.size()) jugadorActual = 0;
-                return true;
-            }
-
-
-
-        } else {
-
             System.out.println("Respuesta correcta!!!!");
             monederos[jugadorActual]++;
             System.out.println(jugadores.get(jugadorActual)
@@ -152,7 +126,6 @@ public class Game {
             if (jugadorActual == jugadores.size()) jugadorActual = 0;
 
             return ganador;
-        }
     }
 
     public boolean respuestaIncorrecta(){
@@ -164,7 +137,6 @@ public class Game {
         if (jugadorActual == jugadores.size()) jugadorActual = 0;
         return true;
     }
-
 
     private boolean jugadorHaGanado() {
         return !(monederos[jugadorActual] == 6);
