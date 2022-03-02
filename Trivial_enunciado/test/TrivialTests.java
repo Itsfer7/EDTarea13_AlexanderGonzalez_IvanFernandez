@@ -33,6 +33,7 @@ public class TrivialTests {
         Assertions.assertEquals(expected, actual);
     }
 
+    // Test Problema 1
     @Test
     public void tener_al_menos_2_jugadores(){
         Game game = new Game();
@@ -44,6 +45,7 @@ public class TrivialTests {
         Assertions.assertEquals(expected, true);
     }
 
+    // Test Problema 2
     @Test
     public void tener_al_menos_2_jugadores_y_maximo_6(){
         Game game = new Game();
@@ -59,16 +61,7 @@ public class TrivialTests {
         Assertions.assertEquals(expected, true);
     }
 
-    @Test
-    public void conseguir_que_el_jugador_salga_de_la_carcel(){
-        Game game = new Game();
-        game.agregar("Maria");
-        game.agregar("Jose");
-        game.agregar("Antonio");
-
-
-    }
-
+    // Test Problema 4
     @Test
     public void noGanador_y_ganador(){
         Game game = new Game();
@@ -96,4 +89,42 @@ public class TrivialTests {
 
         Assertions.assertEquals(noGanador, true);
     }
+
+   /* @Test
+    public void mas_de_50_preguntas() {
+
+        boolean noGanador;
+
+        Game juego = new Game();
+
+        juego.agregar("Maria");
+        juego.agregar("Juan");
+        juego.agregar("Antonio");
+        juego.agregar("Pedro");
+        juego.agregar("Pepe");
+        juego.agregar("Jose");
+
+        if (juego.esJugable()) {
+            Random rand = new Random();
+
+            do {
+
+                juego.tirarDado(rand.nextInt(5) + 1);
+
+                if (rand.nextInt(9) == 7) {
+                    noGanador = juego.respuestaIncorrecta();
+                } else {
+                    noGanador = juego.fueRespuestaCorrecta();
+                }
+
+
+            } while (true);
+        } else if (juego.cuantosJugadores() < 2) {
+            System.out.println("Se han detectado muy pocos jugadores. La partida se ha cancelado.");
+        } else if (juego.cuantosJugadores() > 6) {
+            System.out.println("Se han detectado demasiados jugadores. La partida se ha cancelado.");
+        }
+
+        Assertions.assertEquals(noGanador, true);
+    }*/
 }

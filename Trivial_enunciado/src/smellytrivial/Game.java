@@ -16,25 +16,13 @@ public class Game {
 
     int jugadorActual = 0;
 
-    public Game(){
-        for (int i = 0; i < 50; i++) {
-            preguntasCultura.addLast("Pregunta de Cultura " + i);
-            preguntasCiencias.addLast(("Pregunta de Ciencias " + i));
-            preguntasDeportes.addLast(("Pregunta de Deportes " + i));
-            preguntasMusica.addLast(crearPreguntaMusica(i));
+    public Game() {
+        for (int i = 0; i < 1000; i++) {
+            preguntasCultura.addLast("Pregunta de Cultura " + (i + 1));
+            preguntasCiencias.addLast("Pregunta de Ciencias " + (i + 1));
+            preguntasDeportes.addLast("Pregunta de Deportes " + (i + 1));
+            preguntasMusica.addLast("Pregunta de Música " + (i + 1));
         }
-        /*int i = 0;/*
-        while (true) {
-            preguntasCultura.addLast("Pregunta de Cultura " + i);
-            preguntasCiencias.addLast(("Pregunta de Ciencias " + i));
-            preguntasDeportes.addLast(("Pregunta de Deportes " + i));
-            preguntasMusica.addLast(crearPreguntaMusica(i));
-            i++;
-        }*/
-    }
-
-    public String crearPreguntaMusica(int index){
-        return "Pregunta de Música " + index;
     }
 
     public boolean esJugable() {
@@ -156,3 +144,4 @@ public class Game {
         return !(monederos[jugadorActual] == 6);
     }
 }
+// Problema 7. La pregunta te pide
