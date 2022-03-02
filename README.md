@@ -20,3 +20,6 @@
 
 # Version 1.6
 # En el método "fueRespuestaCorrecta" no son necesarios los "ifs" ya que en los dos casos, ya sea TRUE o FALSE, siempre devolverá lo mismo.
+
+# Version 1.7
+# Cambiaremos el bucle for y pondremos un máximo de, por ejemplo, 1000 preguntas de cada tipo (previamente siendo 50). No podemos poner un bucle infinito ya que no será capaz de imprimir cada caso sin quedarse sin memoria antes. Con 1000 casos debería valer ya que la probabilidad de llegar a la pregunta 1000 (de cualquiera de las 4 categorías) antes de que un jugador llegue a las 6 monedas es ínfima.
